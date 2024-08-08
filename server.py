@@ -12,7 +12,7 @@ async def handle_connection(websocket, path):
         await websocket.send(json.dumps(response))
 
 async def main():
-    server = await websockets.serve(handle_connection, "localhost", 8000)
+    server = await websockets.serve(handle_connection, "0.0.0.0", 8000)
     print("Server started on ws://localhost:8000")
     await server.wait_closed()
 
